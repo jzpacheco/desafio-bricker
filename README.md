@@ -18,7 +18,7 @@ Você pode instalar as bibliotecas necessárias utilizando o seguinte comando pi
 ```pip install PyMuPDF boto3 langchain-openai langchain```
 
 ## Configuração
-Antes de utilizar o projeto, é necessário configurar suas credenciais da AWS para acesso ao serviço Textract. Você pode fazer isso fornecendo suas credenciais diretamente no código ou configurando o arquivo de configuração padrão da AWS (~/.aws/credentials).
+Antes de utilizar o projeto, é necessário configurar suas credenciais da AWS para acesso ao serviço Textract. Você pode fazer isso fornecendo suas credenciais diretamente no código ou configurando o arquivo de configuração padrão da AWS (~/.aws/credentials). E também necessário adicionar a key de acesso para a OpenAI api, no arquivo [config.py](config.py)
 
 ## Uso
 O projeto consiste em um script Python (main.py) que pode ser executado para extrair dados de documentos imobiliários. O script utiliza uma combinação de processamento de imagem (para documentos digitalizados) e processamento de linguagem natural para extrair informações estruturadas dos documentos.
