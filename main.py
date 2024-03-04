@@ -7,12 +7,12 @@ from langchain.chains import create_extraction_chain, create_structured_output_r
 
 textract = boto3.client('textract')
 #client = vision.ImageAnnotatorClient()
-openai_key = "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"
+openai_key = ""
 
 structured_schema = {
     "type": "object",
     "properties": {
-        "expedition_date": {"type": "string", "description": "Data em que a certidão está sendo redigida retorne no formato dd/mm/aaaa"},
+        "expedition_date": {"type": "string", "description": "Data em que a certidão está sendo redigida retorne no formato dd/mm/aaaa,"},
         "responsible_registry": {"type": "string", "description": "nome do cartório que emitiu o documento"},
         "registration_number": {"type": "string", "description": "Número da matrícula do imóvel"},
         "property_type": {"type": "string", "description": "Tipo do imóvel (lote, prédio residencial, apartamento, terreno, vaga de garagem) IMPORTANTE: converta 'terreno urbano' é a mesma coisa que 'terreno' então retorne 'terreno' se o tipo for 'terreno urbano'; IMPORTANTE: no caso de prédio e respectivo terreno sempre retorne prédio;"},
