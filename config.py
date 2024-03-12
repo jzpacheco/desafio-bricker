@@ -4,7 +4,6 @@ from langchain.chains import create_structured_output_runnable
 from langchain.prompts import ChatPromptTemplate
 
 textract = boto3.client('textract')
-#Necessário informar a key para a api da OpenAI
 openai_key = ""
 
 structured_schema = {
@@ -42,9 +41,9 @@ structured_schema = {
 }
 
 prompt = ChatPromptTemplate.from_messages([
-    ("system", "When not found a value and isnt explicit the return, return 'n/a' instead"), 
+    ("system", "When not found a value and isnt explicit the return, return 'n/a' instead a empty string"), 
     ("human", "{input}")
 ])
 
-llm = ChatOpenAI(temperature=0.7, model="gpt-4", openai_api_key=openai_key)
+llm = ChatOpenAI(temperature=0, model="gpt-4", openai_api_key=openai_key)
 extraction_chain = create_structured_output_runnable(structured_schema, llm)
